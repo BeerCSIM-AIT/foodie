@@ -1,0 +1,260 @@
+/* CSS Document */
+@import url('https://fonts.googleapis.com/css2?family=Kodchasan&display=swap');
+
+:root {
+    --darkColor: #FF8D29;
+    --softColor: #FFFFC2;
+    --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Kodchasan', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.navbar {
+    background-color: var(--darkColor);
+    overflow: hidden;
+    height: 56px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.navbar-brand a {
+    font-size: 22px;
+    display: block;
+    float: left;
+    color: #f2f2f2;
+}
+
+.navbar-nav a {
+    font-size: 16px;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    padding: 14px 16px;
+}
+
+.navbar ul {
+    margin: 2px 20px 0;
+    padding-left: 0px;
+    list-style: none;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+}
+
+.navbar-nav a:hover {
+    background-color: var(--softColor);
+    border-radius: 5px;
+    color: var(--darkColor);
+}
+
+.side-nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    opacity: 0.9;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+.side-nav a {
+    padding: 10px 10px 10px 30px;
+    text-decoration: none;
+    font-size: 22px;
+    color: #ccc;
+    display: block;
+    transition: 0.5s;
+}
+
+.side-nav a:hover {
+    color: #fff;
+}
+
+.side-nav .btn-close {
+    position: absolute;
+    top: 0;
+    right: 22px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.open-slide {
+    display: none;
+}
+
+.container {
+    margin: 20px 10%;
+}
+
+.container section {
+    margin-bottom: 20px;
+}
+
+.showcase {
+    color: #f2f2f2;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+        "card1 card1 card2 card3"
+        "card1 card1 card4 card4"
+    ;
+}
+
+.showcase-card img {
+    width: 100%;
+}
+
+.showcase-card {
+    padding-inline: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+.showcase .card-title {
+    font-weight: bold;
+    font-size: 32px;
+    text-shadow: 2px 2px #333;
+}
+
+.showcase .card-subtitle {
+    font-weight: bold;
+    font-size: 26px;
+    text-shadow: 2px 2px #333;
+}
+
+.showcase .card-text {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+
+.showcase .btn {
+    background-color: var(--darkColor);
+    color: #fff;
+    font-weight: bold;
+    padding: 15px;
+    display: inline-block;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.showcase .btn:hover {
+    background-color: var(--softColor);
+    color: var(--darkColor);
+}
+
+.card-2,
+.card-3 {
+    height: 200px;
+}
+
+.card-1 {
+    height: 430px;
+    grid-area: card1;
+    background: url('images/banner-1.jpg');
+    background-size: cover;
+
+}
+
+.card-2 {
+    grid-area: card2;
+    background: url('images/banner-2.jpg');
+    background-size: cover;
+}
+
+.card-3 {
+    grid-area: card3;
+    background: url('images/banner-3.jpg');
+    background-size: cover;
+}
+
+.card-4 {
+    height: 220px;
+    grid-area: card4;
+    background: url('images/banner-4.jpg');
+    background-size: cover;
+}
+
+.contact{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+}
+.box{
+    background: var(--darkColor);
+    text-align: center;
+    color: #f2f2f2;
+    padding: 1.5rem 2rem;
+    box-shadow: var(--shadow);
+}
+
+footer {
+
+    margin-top: 2rem;
+    /* background: var(--darkColor); */
+    color: #333;
+    text-align: center;
+    padding: 1rem;
+}
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        display: none;
+    }
+
+    .open-slide {
+        display: block;
+    }
+
+    .container {
+        margin: 20px;
+    }
+
+    .showcase {
+        color: #f2f2f2;
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "card1 card1"
+            "card2 card3"
+            "card4 card4"
+        ;
+    }
+
+    .showcase .card-title {
+        font-size: 24px;
+    }
+    
+    .showcase .card-subtitle {
+        font-size: 18px;
+    }
+    
+}
